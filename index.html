@@ -18,17 +18,13 @@
         <h1>Taslima.GitHub.io</h1>
         <h2>login page </h2>
 
-        <section id="downloads">
-          <a href="https://github.com/taslimamansuri/taslima.github.io/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/taslimamansuri/taslima.github.io/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/taslimamansuri/taslima.github.io" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+        
       </div>
     </header>
 
     <div class="container">
       <section id="main_content">
-        <p>&lt;
+        <p>
         <?php
 session_start();
 $php_timestamp = time();
@@ -71,13 +67,12 @@ Login
 </div>
 
 
-<p></p>
 Not Registered yet? 
 
 <p><a href="register.php">Sign Up Here</a><br>
 <a href="admin_login.php">Admin Login</a></p>
 
-<p></p>
+
 
 
 <?php
@@ -85,17 +80,17 @@ mysql_connect("localhost","root","taslima");
 mysql_select_db("register_db");
 if(isset($_POST['login'])){
 
-<pre><code>$user_email=$_POST['email'];
+$user_email=$_POST['email'];
 $user_pass=$_POST['pass'];
 
 if($user_email==''){
 
-    echo"&lt;script&gt;alert('please enter email!')&lt;/script&gt;";
+    echo"<script>alert('please enter email!')</script>";
     exit();
 }
 if($user_pass==''){
 
-    echo"&lt;script&gt;alert('please enter password!')&lt;/script&gt;";
+    echo"<script>alert('please enter password!')</script>";
     exit();
 }
 $check_user="select * from users where user_email='$user_email' AND user_pass='$user_pass'";
@@ -105,21 +100,21 @@ $get= mysql_fetch_assoc($run);
 
 $id=$get['id'];
 
-if(mysql_num_rows($run)&gt;0){
+if(mysql_num_rows($run)>0){
 
     $_SESSION['email']=$user_email;
 
-    echo "&lt;script&gt;window.open('welcome.php?id=$id', '_self')&lt;/script&gt;";
+    echo "<script>window.open('welcome.php?id=$id', '_self')</script>";
     $query = "update users set login_time='$php_timestamp_date' where user_email='$user_email'";
     mysql_query($query); 
     //or die('Error in MySQL query : '.mysql_error()); 
 }
 else{
-    echo "&lt;script&gt;alert('Email or password is incorrect!')&lt;/script&gt;";
+    echo "<script>alert('Email or password is incorrect!')</script>";
 }
-</code></pre>
 
-<p>}
+
+}
 ?></p>
       </section>
     </div>
