@@ -74,10 +74,10 @@ Not Registered yet?
 
 
 
-
 <?php
-mysql_connect("localhost","root","taslima");
-mysql_select_db("register_db");
+
+mysql_connect ("localhost","root","taslima");
+mysql_select_db ("register_db");
 if(isset($_POST['login'])){
 
 $user_email=$_POST['email'];
