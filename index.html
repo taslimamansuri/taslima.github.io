@@ -28,11 +28,12 @@
 
     <div class="container">
       <section id="main_content">
-        <p>&lt;?php
+        <p>&lt;
+        <?php
 session_start();
 $php_timestamp = time();
 $php_timestamp_date = date("Y-m-d H:i:s", $php_timestamp);
-?&gt;
+?>
 
 </p>
 
@@ -79,7 +80,7 @@ Not Registered yet?
 <p></p>
 
 
-&lt;?php
+<?php
 mysql_connect("localhost","root","taslima");
 mysql_select_db("register_db");
 if(isset($_POST['login'])){
@@ -119,7 +120,7 @@ else{
 </code></pre>
 
 <p>}
-?&gt;</p>
+?></p>
       </section>
     </div>
 
