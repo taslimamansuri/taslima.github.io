@@ -60,7 +60,7 @@ Login</h1>
         
     </tr>
     <tr>
-        <td colspan="5" align="center"></td>
+        <td colspan="5" align="center"><input type='submit' name='login' value='Login'/></td>
     </tr>
 
 </table>
@@ -86,12 +86,12 @@ $user_pass=$_POST['pass'];
 if($user_email==''){
 
     echo"<script>alert('please enter email!')</script>";
-    exit();
+    
 }
 if($user_pass==''){
 
     echo"<script>alert('please enter password!')</script>";
-    exit();
+  
 }
 $check_user="select * from users where user_email='$user_email' AND user_pass='$user_pass'";
 
